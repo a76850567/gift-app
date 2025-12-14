@@ -104,38 +104,41 @@ export function CardDecorations({
 }
 
 function DecorationIcon({ pattern, size }: { pattern: string; size: number }) {
+  // Add defensive check for size
+  const iconSize = size || 24;
+  
   switch (pattern) {
     case "heart":
       return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
         </svg>
       );
     
     case "star":
       return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       );
     
     case "butterfly":
       return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3c-.55 0-1 .45-1 1v1.5c-1.25.2-2.45.65-3.5 1.35C6.15 5.9 4.65 5 3 5 1.35 5 0 6.35 0 8s1.35 3 3 3c.85 0 1.6-.35 2.15-.9.45.6 1 1.1 1.6 1.5L5 14c-.55.55-.55 1.45 0 2l2 2c.55.55 1.45.55 2 0l3-3 3 3c.55.55 1.45.55 2 0l2-2c.55-.55.55-1.45 0-2l-1.75-2.4c.6-.4 1.15-.9 1.6-1.5.55.55 1.3.9 2.15.9 1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.65 0-3.15.9-4.5 1.85-1.05-.7-2.25-1.15-3.5-1.35V4c0-.55-.45-1-1-1z" />
         </svg>
       );
     
     case "diamond":
       return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L2 7l10 15 10-15L12 2zm0 3.84L18.93 9H5.07L12 5.84z" />
         </svg>
       );
     
     case "flower":
       return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="currentColor">
           <circle cx="12" cy="12" r="3" />
           <circle cx="12" cy="5" r="2.5" />
           <circle cx="12" cy="19" r="2.5" />

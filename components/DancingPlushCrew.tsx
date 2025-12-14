@@ -155,10 +155,10 @@ function DancingFigure({
       style={{ originX: 0.5, originY: 0.5 }}
     >
       {/* Vibration lines */}
-      {pose.vibration.map((d, i) => (
+      {pose?.vibration?.map((d, i) => (
         <motion.path
           key={`vibe-${i}`}
-          d={d}
+          d={d || ""}
           stroke={color}
           strokeWidth="2.5"
           strokeLinecap="round"
@@ -168,7 +168,7 @@ function DancingFigure({
 
       {/* Body */}
       <motion.path
-        d={pose.body}
+        d={pose?.body || ""}
         stroke={color}
         strokeWidth="3.5"
         strokeLinecap="round"
@@ -178,8 +178,8 @@ function DancingFigure({
 
       {/* Head */}
       <motion.circle
-        cx={pose.head.cx}
-        cy={pose.head.cy}
+        cx={pose?.head?.cx || 12}
+        cy={pose?.head?.cy || 5}
         r="2.5"
         stroke={color}
         strokeWidth="3.5"
