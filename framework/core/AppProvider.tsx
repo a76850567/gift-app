@@ -28,8 +28,10 @@ type AppProviderProps = {
 
 export function AppProvider({ config, children }: AppProviderProps) {
   return (
-    <AppContext.Provider value={{ config }}>
-      <BrowserRouter>{children}</BrowserRouter>
-    </AppContext.Provider>
+    <BrowserRouter>
+      <AppContext.Provider value={{ config }}>
+        {children}
+      </AppContext.Provider>
+    </BrowserRouter>
   );
 }
