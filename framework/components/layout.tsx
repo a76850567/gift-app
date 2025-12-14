@@ -72,7 +72,7 @@ type BottomNavProps = {
 };
 
 export function BottomNav({ routes, className, onAddGoal }: BottomNavProps) {
-  const linkBase = "flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-all font-bold uppercase text-[10px] tracking-wider";
+  const linkBase = "flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-all font-bold uppercase text-[10px] tracking-wider";
   const active = "gradient-rainbow-animated text-white border-[2px] border-white shadow-button";
   const idle = "text-black/70 hover:bg-white/50 border-[2px] border-transparent";
 
@@ -84,9 +84,9 @@ export function BottomNav({ routes, className, onAddGoal }: BottomNavProps) {
   return (
     <div className={cn("fixed bottom-0 left-0 right-0 z-40", className)}>
       <div className="max-w-md mx-auto px-4 pb-2"> {/* Changed from max-w-3xl to max-w-md */}
-        <nav className="rounded-[1.5rem] border-[3px] border-black/20 bg-white/90 backdrop-blur shadow-card p-2 flex justify-between items-center">
+        <nav className="rounded-[1.5rem] border-[3px] border-black/20 bg-white/90 backdrop-blur shadow-card p-2 flex justify-around items-center gap-2">
           {/* Left Routes */}
-          <div className="flex gap-1">
+          <div className="flex gap-2">
             {leftRoutes.map((route) => {
               const IconComponent = route.icon;
               return (
@@ -130,7 +130,7 @@ export function BottomNav({ routes, className, onAddGoal }: BottomNavProps) {
           )}
 
           {/* Right Routes */}
-          <div className="flex gap-1">
+          <div className="flex gap-2">
             {rightRoutes.map((route) => {
               const IconComponent = route.icon;
               return (
