@@ -10,9 +10,8 @@ import {
   RainbowHeartIcon,
   TodayIcon,
   MomentsIcon,
-  RoomIcon,
-  MemoryIcon,
-  SettingsIcon
+  SpaceIcon,
+  MeIcon
 } from "../components/icons";
 import { DancingPlushCrew } from "../components/DancingPlushCrew";
 import type { PlushMood } from "../types/gift";
@@ -111,9 +110,8 @@ export function IconShowcasePage() {
             {[
               { Icon: TodayIcon, label: "Today", color: "from-[#FF1B8D] to-[#FF6B4A]" },
               { Icon: MomentsIcon, label: "Moments", color: "from-[#FF9B3D] to-[#FFD93D]" },
-              { Icon: RoomIcon, label: "Room", color: "from-[#4ECDC4] to-[#45B7D1]" },
-              { Icon: MemoryIcon, label: "Memory", color: "from-[#9B6DFF] to-[#FF85C0]" },
-              { Icon: SettingsIcon, label: "Settings", color: "from-[#B8E62E] to-[#4ECDC4]" },
+              { Icon: SpaceIcon, label: "Space", color: "from-[#4ECDC4] to-[#45B7D1]" },
+              { Icon: MeIcon, label: "Me", color: "from-[#9B6DFF] to-[#FF85C0]" },
             ].map(({ Icon, label, color }) => (
               <div key={label} className="flex flex-col items-center gap-3">
                 {/* Inactive State */}
@@ -190,9 +188,8 @@ export function IconShowcasePage() {
             {[
               { Icon: TodayIcon, label: "Today", active: true },
               { Icon: MomentsIcon, label: "Moment", active: false },
-              { Icon: RoomIcon, label: "Room", active: false },
-              { Icon: MemoryIcon, label: "Memory", active: false },
-              { Icon: SettingsIcon, label: "Settings", active: false },
+              { Icon: SpaceIcon, label: "Space", active: false },
+              { Icon: MeIcon, label: "Me", active: false },
             ].map(({ Icon, label, active }) => (
               <div
                 key={label}

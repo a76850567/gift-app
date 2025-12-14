@@ -11,9 +11,5 @@ export {
   TodayIcon, 
   MomentsIcon, 
   SpaceIcon,
-  MeIcon,
-  // Legacy exports (deprecated)
-  RoomIcon, 
-  MemoryIcon, 
-  SettingsIcon 
+  MeIcon
 } from "./TabIcons";
