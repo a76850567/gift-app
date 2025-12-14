@@ -84,9 +84,9 @@ export function BottomNav({ routes, className, onAddGoal }: BottomNavProps) {
   return (
     <div className={cn("fixed bottom-0 left-0 right-0 z-40", className)}>
       <div className="max-w-md mx-auto px-4 pb-2"> {/* Changed from max-w-3xl to max-w-md */}
-        <nav className="rounded-[1.5rem] border-[3px] border-black/20 bg-white/90 backdrop-blur shadow-card p-2 flex justify-between items-center">
+        <nav className="rounded-[1.5rem] border-[3px] border-black/20 bg-white/90 backdrop-blur shadow-card p-2 flex items-center">
           {/* Left Routes */}
-          <div className="flex gap-1.5 flex-1 justify-start">
+          <div className="flex gap-1 flex-shrink-0">
             {leftRoutes.map((route) => {
               const IconComponent = route.icon;
               return (
@@ -107,11 +107,14 @@ export function BottomNav({ routes, className, onAddGoal }: BottomNavProps) {
             })}
           </div>
 
+          {/* Spacer - grows to push center button to middle */}
+          <div className="flex-1" />
+
           {/* Center Add Button */}
           {onAddGoal && (
             <button
               onClick={onAddGoal}
-              className="relative flex items-center justify-center w-14 h-14 rounded-full gradient-rainbow-animated border-[4px] border-white shadow-button hover:scale-110 active:scale-95 transition-transform -mt-8 mx-2"
+              className="relative flex items-center justify-center w-14 h-14 rounded-full gradient-rainbow-animated border-[4px] border-white shadow-button hover:scale-110 active:scale-95 transition-transform -mt-8 flex-shrink-0"
               aria-label="Create new goal"
             >
               <svg
@@ -129,8 +132,11 @@ export function BottomNav({ routes, className, onAddGoal }: BottomNavProps) {
             </button>
           )}
 
+          {/* Spacer - grows to push center button to middle */}
+          <div className="flex-1" />
+
           {/* Right Routes */}
-          <div className="flex gap-1.5 flex-1 justify-end">
+          <div className="flex gap-1 flex-shrink-0">
             {rightRoutes.map((route) => {
               const IconComponent = route.icon;
               return (

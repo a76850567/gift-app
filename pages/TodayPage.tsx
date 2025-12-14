@@ -51,6 +51,12 @@ export function TodayPage() {
   // Filter pending tasks for TaskStack
   const pendingTasks = todayTasks.filter((t) => t.status === "pending");
 
+  // Debug logging
+  console.log('📋 TodayPage - todayTasks:', todayTasks);
+  console.log('📋 TodayPage - todayTasks.length:', todayTasks.length);
+  console.log('📋 TodayPage - pendingTasks.length:', pendingTasks.length);
+  console.log('📋 TodayPage - doneCount:', doneCount, 'restCount:', restCount, 'pendingCount:', pendingCount);
+
   const handleAddTask = () => {
     if (newTaskTitle.trim()) {
       addTask(newTaskTitle);

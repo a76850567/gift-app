@@ -727,23 +727,30 @@ export function useGiftApp() {
     createInitialState(),
   );
 
-  // Migration: 确保旧数据有 aiVideos 字段
+  // Migration: 确保旧数据有 aiVideos 和 friends 字段
   useEffect(() => {
+    let needsUpdate = false;
+    const updates: Partial<GiftAppState> = {};
+
     if (!state.aiVideos) {
-      setState((prev) => ({
-        ...prev,
-        aiVideos: [],
-      }));
+      updates.aiVideos = [];
+      needsUpdate = true;
     }
-    // Migration: 确保旧数据有 friends 字段
+    
     if (!state.friends) {
       const initialState = createInitialState();
+      updates.friends = initialState.friends;
+      needsUpdate = true;
+    }
+
+    if (needsUpdate) {
+      console.log('🔄 Migrating old data with updates:', updates);
       setState((prev) => ({
         ...prev,
-        friends: initialState.friends,
+        ...updates,
       }));
     }
-  }, []);
+  }, [state.aiVideos, state.friends, setState]);
 
   const todayKey = useMemo(() => getDayKey(), []);
   const todayTasks = state.tasksByDay[todayKey] || [];
@@ -752,6 +759,7 @@ export function useGiftApp() {
   console.log('🎯 useGiftApp - todayKey:', todayKey);
   console.log('🎯 useGiftApp - todayTasks count:', todayTasks.length);
   console.log('🎯 useGiftApp - todayTasks:', todayTasks);
+  console.log('🎯 useGiftApp - state.tasksByDay:', state.tasksByDay);
 
   // Day rollover check
   useEffect(() => {
@@ -768,7 +776,11 @@ export function useGiftApp() {
       setState((prev) => {
         const tasksByDay = { ...prev.tasksByDay };
         if (!tasksByDay[todayKey]) {
-          tasksByDay[todayKey] = defaultTasks();
+          // Create today's tasks: recurring goals + daily tasks
+          const recurring = defaultRecurringTasks();
+          const daily = defaultTasks();
+          tasksByDay[todayKey] = [...recurring, ...daily];
+          console.log('🚀 Creating fresh tasks for today:', todayKey, 'count:', tasksByDay[todayKey].length);
         }
 
         return {
@@ -779,6 +791,21 @@ export function useGiftApp() {
           tasksByDay,
         };
       });
+    } else {
+      // Same day - check if tasks exist
+      if (!state.tasksByDay[todayKey] || state.tasksByDay[todayKey].length === 0) {
+        console.log('⚠️ No tasks found for today, creating fresh tasks...');
+        setState((prev) => {
+          const tasksByDay = { ...prev.tasksByDay };
+          const recurring = defaultRecurringTasks();
+          const daily = defaultTasks();
+          tasksByDay[todayKey] = [...recurring, ...daily];
+          return {
+            ...prev,
+            tasksByDay,
+          };
+        });
+      }
     }
   }, [
     todayKey,
