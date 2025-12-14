@@ -20,7 +20,7 @@ import { TaskStack } from "../components/TaskStack";
 import { TaskCompletionModal } from "../components/TaskCompletionModal";
 import { HeartIcon } from "../components/icons/HeartIcon";
 import { FlameIcon } from "../components/icons/FlameIcon";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { DecoratedCard } from "../components/DecoratedCard";
 import { ConfettiCelebration } from "../components/ConfettiCelebration";
 import { CreateMultipleGoalsButton } from "../components/CreateMultipleGoalsButton";

@@ -4,7 +4,7 @@
 
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Edit2, X, Gift } from "lucide-react";
 import { CardDecorations } from "./CardDecorations";
 import type { Task } from "../types/gift";

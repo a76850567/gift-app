@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useRef } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { CheckCircle2, Circle, Calendar, Gift, Edit2, X, Users } from "lucide-react";
 import type { Task } from "../types/gift";
 import { CardDecorations } from "./CardDecorations";

@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 type DecorationPattern = "hearts" | "stars" | "butterflies" | "diamonds" | "flowers" | "mixed";
 

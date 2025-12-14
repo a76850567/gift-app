@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 type ConfettiCelebrationProps = {
   trigger: boolean; // Set to true to trigger animation

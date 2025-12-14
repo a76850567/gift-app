@@ -7,7 +7,7 @@
 import React, { useMemo } from "react";
 import { Shell, PageHeader, Badge } from "../framework";
 import { useGiftApp } from "../hooks/useGiftApp";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { CheckCircle2, Circle, Coffee, Trash2 } from "lucide-react";
 import type { Task } from "../types/gift";
 import { CardDecorations } from "../components/CardDecorations";

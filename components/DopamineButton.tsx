@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { HeartIcon } from "./icons/HeartIcon";
 import { FlameIcon } from "./icons/FlameIcon";
 import { cn } from "../framework";

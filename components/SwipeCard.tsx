@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useRef } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Check, Pause, Trash2, Sparkles } from "lucide-react";
 import { cn, clamp, Button, Badge } from "../framework";
 import type { Task } from "../types/gift";

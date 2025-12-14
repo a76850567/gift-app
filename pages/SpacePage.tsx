@@ -7,7 +7,7 @@
 import React, { useMemo, useState } from "react";
 import { Shell, PageHeader, Badge } from "../framework";
 import { useGiftApp } from "../hooks/useGiftApp";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Video, Trash2, Play, X, ChevronRight, Users } from "lucide-react";
 import { DancingAroundFire } from "../components/DancingAroundFire";
 import { CardDecorations } from "../components/CardDecorations";

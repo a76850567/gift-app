@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Heart, Sparkles, Flame } from "lucide-react";
 import { cn } from "../framework";
 import type { PlushMood } from "../types/gift";

@@ -11,7 +11,7 @@ import { useGiftApp } from "../hooks/useGiftApp";
 import type { ThemeColor } from "../framework";
 import { FlameIcon } from "../components/icons/FlameIcon";
 import { HeartIcon } from "../components/icons/HeartIcon";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Sparkles, Calendar, CheckCircle2, Settings as SettingsIcon } from "lucide-react";
 
 const COLOR_OPTIONS: Array<{ value: ThemeColor; label: string }> = [

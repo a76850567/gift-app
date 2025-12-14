@@ -4,7 +4,7 @@
  */
 
 import React, { useMemo } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 type DancingAroundFireProps = {
   warmth: number; // 0-200+

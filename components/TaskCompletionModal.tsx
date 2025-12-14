@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Type, Camera, Mic, Share2, X, Check, StopCircle } from "lucide-react";
 import { Button, Textarea, Card } from "../framework";
 import { HeartIcon } from "./icons/HeartIcon";

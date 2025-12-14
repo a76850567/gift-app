@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useRef } from "react";
-import { motion, useMotionValue, useTransform, PanInfo } from "motion/react";
+import { motion, useMotionValue, useTransform, PanInfo } from "framer-motion";
 import { Check, X, Target } from "lucide-react";
 import type { Task } from "../types/gift";
 import { useGiftApp } from "../hooks/useGiftApp";
