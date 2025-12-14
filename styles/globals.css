@@ -1,0 +1,364 @@
+@custom-variant dark (&:is(.dark *));
+
+/* 🌈 DOPAMINE DESIGN SYSTEM - CSS Variables */
+:root {
+  /* Dopamine Colors */
+  --hot-pink: #FF1B8D;
+  --coral: #FF6B4A;
+  --tangerine: #FF9B3D;
+  --sunshine: #FFD93D;
+  --lime: #B8E62E;
+  --mint: #4ECDC4;
+  --sky: #45B7D1;
+  --lavender: #9B6DFF;
+  --bubblegum: #FF85C0;
+  
+  /* Additional Colors */
+  --neon-green: #B8E62E;
+  --sky-blue: #45B7D1;
+  --fire-orange: #FF8C42;
+  
+  /* Fire Colors */
+  --fire-red: #FF3D3D;
+  --fire-yellow: #FFC857;
+  
+  /* Rainbow Gradient */
+  --rainbow: linear-gradient(
+    90deg,
+    #FF1B8D 0%,
+    #FF6B4A 14%,
+    #FF9B3D 28%,
+    #FFD93D 42%,
+    #B8E62E 57%,
+    #4ECDC4 71%,
+    #45B7D1 85%,
+    #9B6DFF 100%
+  );
+  
+  /* Rainbow Vertical */
+  --rainbow-vertical: linear-gradient(
+    180deg,
+    #FF1B8D 0%,
+    #FF6B4A 14%,
+    #FF9B3D 28%,
+    #FFD93D 42%,
+    #B8E62E 57%,
+    #4ECDC4 71%,
+    #45B7D1 85%,
+    #9B6DFF 100%
+  );
+  
+  /* Fire Gradient */
+  --fire-gradient: linear-gradient(135deg, var(--fire-red), var(--fire-orange), var(--fire-yellow));
+  
+  /* Button Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--hot-pink), var(--coral));
+  --gradient-secondary: linear-gradient(135deg, var(--tangerine), var(--sunshine));
+  --gradient-success: linear-gradient(135deg, var(--lime), var(--mint));
+  --gradient-warning: linear-gradient(135deg, var(--coral), var(--tangerine));
+  --gradient-danger: linear-gradient(135deg, var(--fire-red), var(--fire-orange));
+  
+  /* Shadows */
+  --shadow-retro: 6px 6px 0px rgba(0, 0, 0, 0.25);
+  --shadow-button: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --shadow-card: 8px 8px 0px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 30px currentColor;
+  
+  /* Radius */
+  --radius: 1.5rem;
+  --radius-full: 9999px;
+  --radius-card: 2rem;
+  
+  /* Font */
+  --font-size: 16px;
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+}
+
+/* 🎨 Base Styles */
+@layer base {
+  * {
+    @apply outline-none;
+  }
+
+  body {
+    @apply bg-white text-black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* ✨ Animated Star Background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(2px 2px at 60% 70%, white, transparent),
+      radial-gradient(2px 2px at 50% 50%, white, transparent),
+      radial-gradient(2px 2px at 80% 10%, white, transparent),
+      radial-gradient(2px 2px at 90% 60%, white, transparent),
+      radial-gradient(2px 2px at 33% 85%, white, transparent),
+      radial-gradient(2px 2px at 15% 75%, white, transparent);
+    background-size: 200% 200%;
+    opacity: 0.3;
+    animation: sparkle-bg 8s ease-in-out infinite;
+  }
+}
+
+/* 📝 Typography with Dopamine Style */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: 2.5rem;
+      font-weight: var(--font-weight-black);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: var(--font-weight-bold);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+      line-height: 1.3;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.4;
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+    }
+
+    button {
+      font-weight: var(--font-weight-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+    }
+
+    input, textarea {
+      font-size: 1rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+/* ✨ Animations */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes sparkle-bg {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(10px, 10px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 40px currentColor, 0 0 60px currentColor;
+  }
+}
+
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fire-flicker {
+  0%, 100% {
+    filter: brightness(1) saturate(1);
+  }
+  25% {
+    filter: brightness(1.1) saturate(1.2);
+  }
+  50% {
+    filter: brightness(0.9) saturate(0.9);
+  }
+  75% {
+    filter: brightness(1.15) saturate(1.3);
+  }
+}
+
+/* 🎨 Utility Classes */
+@layer utilities {
+  .text-gradient {
+    background: var(--rainbow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+  
+  .text-gradient-animated {
+    background: var(--rainbow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: rainbow-shift 3s ease infinite;
+  }
+  
+  .gradient-rainbow {
+    background: var(--rainbow);
+    background-size: 200% 200%;
+  }
+  
+  .gradient-rainbow-animated {
+    background: var(--rainbow);
+    background-size: 200% 200%;
+    animation: rainbow-shift 3s ease infinite;
+  }
+  
+  .gradient-fire {
+    background: var(--fire-gradient);
+  }
+  
+  .gradient-fire-animated {
+    background: var(--fire-gradient);
+    animation: fire-flicker 2s ease-in-out infinite;
+  }
+  
+  .sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .glow {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  
+  .bounce-in {
+    animation: bounce-in 0.5s ease-out;
+  }
+  
+  .shadow-retro {
+    box-shadow: var(--shadow-retro);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .border-retro {
+    border: 4px solid currentColor;
+  }
+  
+  .border-thick {
+    border: 3px solid currentColor;
+  }
+  
+  /* 隐藏滚动条但保持滚动功能 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
+  /* Snap scrolling for carousel */
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .snap-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .snap-start {
+    scroll-snap-align: start;
+  }
+  
+  .snap-center {
+    scroll-snap-align: center;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
