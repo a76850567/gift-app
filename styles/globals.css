@@ -1,6 +1,6 @@
-@import "tailwindcss";
-
-@custom-variant dark (&:is(.dark *));
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* 🌈 DOPAMINE DESIGN SYSTEM - CSS Variables */
 :root {
