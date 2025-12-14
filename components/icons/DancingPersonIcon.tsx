@@ -85,10 +85,10 @@ export function DancingPersonIcon({
       style={{ originX: 0.5, originY: 0.5 }}
     >
       {/* Vibration lines */}
-      {currentPose.vibration.map((d, i) => (
+      {currentPose?.vibration?.map((d, i) => (
         <motion.path
           key={`vibe-${i}`}
-          d={d}
+          d={d || ""}
           stroke={color}
           strokeWidth="2.5"
           strokeLinecap="round"
@@ -99,7 +99,7 @@ export function DancingPersonIcon({
 
       {/* Body */}
       <motion.path
-        d={currentPose.body}
+        d={currentPose?.body || ""}
         stroke={color}
         strokeWidth="3"
         strokeLinecap="round"
@@ -109,9 +109,9 @@ export function DancingPersonIcon({
 
       {/* Head */}
       <motion.circle
-        cx={currentPose.head.cx}
-        cy={currentPose.head.cy}
-        r={currentPose.head.r}
+        cx={currentPose?.head?.cx || 12}
+        cy={currentPose?.head?.cy || 5}
+        r={currentPose?.head?.r || 2.5}
         stroke={color}
         strokeWidth="3"
         fill="none"

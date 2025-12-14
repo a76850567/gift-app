@@ -748,6 +748,11 @@ export function useGiftApp() {
   const todayKey = useMemo(() => getDayKey(), []);
   const todayTasks = state.tasksByDay[todayKey] || [];
 
+  // Debug logging
+  console.log('🎯 useGiftApp - todayKey:', todayKey);
+  console.log('🎯 useGiftApp - todayTasks count:', todayTasks.length);
+  console.log('🎯 useGiftApp - todayTasks:', todayTasks);
+
   // Day rollover check
   useEffect(() => {
     if (state.lastActiveDayKey !== todayKey) {
